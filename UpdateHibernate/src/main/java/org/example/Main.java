@@ -15,8 +15,7 @@ public class Main {
         configuration.configure("hibernate.cfg.xml");
 
         // Create Session Factory
-        SessionFactory sessionFactory
-                = configuration.buildSessionFactory();
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
 
         // Initialize Session Object
         Session session = sessionFactory.openSession();
