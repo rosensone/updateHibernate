@@ -3,59 +3,60 @@ package org.example;
 import java.util.Date;
 
 public class Alumno {
-    private int ID;
-    private String Nombre;
-    private String Apellidos;
-    private int Edad;
-    private Date FechaNacimiento;
+    private int id;
+    private String nombre;
+    private String apellidos;
+    private int edad;
+    private Date fechaNacimiento;
 
     public Alumno() {
+        
     }
-    public Alumno(int ID, String nombre, String apellidos, int edad, Date fechaNacimiento) {
-        this.ID = ID;
-        Nombre = nombre;
-        Apellidos = apellidos;
-        Edad = edad;
-        FechaNacimiento = fechaNacimiento;
+    public Alumno(int id, String nombre, String apellidos, int edad, Date fechaNacimiento) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.edad = edad;
+        this.fechaNacimiento = fechaNacimiento;
     }
     public int getID() {
-        return ID;
+        return id;
     }
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setID(int id) {
+        this.id = id;
     }
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.nombre = nombre;
     }
     public String getApellidos() {
-        return Apellidos;
+        return apellidos;
     }
     public void setApellidos(String apellidos) {
-        Apellidos = apellidos;
+        this.apellidos = apellidos;
     }
     public int getEdad() {
-        return Edad;
+        return edad;
     }
     public void setEdad(int edad) {
-        Edad = edad;
+        this.edad = edad;
     }
     public Date getFechaNacimiento() {
-        return FechaNacimiento;
+        return fechaNacimiento;
     }
     public void setFechaNacimiento(Date fechaNacimiento) {
-        FechaNacimiento = fechaNacimiento;
+        this.fechaNacimiento = fechaNacimiento;
     }
     @Override
     public String toString() {
         return "Alumno{" +
-                "ID=" + ID +
-                ", Nombre='" + Nombre + '\'' +
-                ", Apellidos='" + Apellidos + '\'' +
-                ", Edad=" + Edad +
-                ", FechaNacimiento=" + FechaNacimiento +
+                "ID=" + id +
+                ", Nombre='" + nombre + '\'' +
+                ", Apellidos='" + apellidos + '\'' +
+                ", Edad=" + edad +
+                ", FechaNacimiento=" + fechaNacimiento +
                 '}';
     }
 }
