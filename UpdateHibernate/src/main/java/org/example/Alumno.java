@@ -1,24 +1,62 @@
 package org.example;
 
-import java.util.Date;
 
+import jakarta.persistence.*;
+
+/**
+ * Con @Entity marcamos que esta clase será una entidad de la base de datos.
+ * Con @Table indicamos el nombre de la tabla de la base de datos con la que se va a trabajar
+ * IMPORTANTE --> el nombre de este parámetro debe ser IDENTICO al de nuestra base de datos, de lo contrario, no funcionará o creará una tabla nueva.
+ */
+@Entity
+@Table (name = "alumno")
 public class Alumno {
-    private int id;
-    private String nombre;
-    private String apellidos;
-    private int edad;
-    private Date fechaNacimiento;
 
+    /**
+     * Con @Id marcamos que este atributo sera el identificador de la tabla.
+     * Con @GeneratedValue indicamos que este atributo será autoincremental.
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    /**
+     * Con @Column hacemos referencia al nombre de la columna de la tabla de la base de datos, como hemos dicho antes, este nombre
+     * deberá ser IDENTICO al de nuestra base de datos.
+     */
+    @Column (name = "nombre")
+    private String nombre;
+    @Column (name = "apellidos")
+    private String apellidos;
+    @Column(name = "edad")
+    private int edad;
+
+
+    /**
+     * CONSTRUCTOR VACÍO
+     */
     public Alumno() {
-        
+     this.id = 0;
+     this.nombre = "";
+     this.apellidos = "";
+     this.edad = 0;
     }
-    public Alumno(int id, String nombre, String apellidos, int edad, Date fechaNacimiento) {
+
+    /**
+     *
+     * @param id del alumno
+     * @param nombre del alumno
+     * @param apellidos del alumno
+     * @param edad del alumno
+     */
+    public Alumno(int id, String nombre, String apellidos, int edad) {
         this.id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.edad = edad;
-        this.fechaNacimiento = fechaNacimiento;
     }
+
+    //GETTER & SETTER
     public int getID() {
         return id;
     }
@@ -43,12 +81,11 @@ public class Alumno {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-    public Date getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-    public void setFechaNacimiento(Date fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
+
+    /**
+     * METODO TO STRING
+     * @return clase Alumno en formato String (NO IMPRIME).
+     */
     @Override
     public String toString() {
         return "Alumno{" +
@@ -56,7 +93,7 @@ public class Alumno {
                 ", Nombre='" + nombre + '\'' +
                 ", Apellidos='" + apellidos + '\'' +
                 ", Edad=" + edad +
-                ", FechaNacimiento=" + fechaNacimiento +
+                ", FechaNacimiento=" +
                 '}';
     }
 }
